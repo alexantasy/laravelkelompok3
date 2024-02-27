@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (){
     return view('welcome');
-})->name('home');
+});
 
-Route::get('/chapter1', function () {
-    return view('chapter1');
-})->name('chapter1');
+Route::get('/dashboard', [DashboardController::class,'index']);
